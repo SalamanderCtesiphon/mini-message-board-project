@@ -27,7 +27,7 @@ router.post('/new', function(req, res, next) {
   const messageText = req.body.message;
   const messageUser = req.body.user;
   messages.push({text: messageText, user: messageUser, added: new Date()});
-  res.send();
+  res.redirect('/');
 });
 
 module.exports = router;
