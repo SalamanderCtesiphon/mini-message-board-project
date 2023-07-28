@@ -23,4 +23,11 @@ router.get('/new', function(req, res, next) {
   res.render('form', { title: "Mini Messageboard", messages: messages });
 });
 
+router.post('/new', function(req, res, next) {
+  const messageText = req.body.message;
+  const messageUser = req.body.user;
+  messages.push({text: messageText, user: messageUser, added: new Date()});
+  res.send();
+});
+
 module.exports = router;
